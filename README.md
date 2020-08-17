@@ -58,6 +58,10 @@ PNN模型解读
 
 ![image](https://github.com/ShaoQiBNU/PNN/blob/master/img/7.jpg)
 
+![image](https://github.com/ShaoQiBNU/PNN/blob/master/img/8.jpg)
+
+![image](https://github.com/ShaoQiBNU/PNN/blob/master/img/9.jpg)
+
 # 结论
 
 1. PNN的动机很直观，通过在NN的嵌入层和隐层之间引入product层，显示地引入基于field的“product”，从而加强单纯基于“add”的NN的特征相关性学习能力。

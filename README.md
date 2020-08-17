@@ -7,7 +7,7 @@ PNN模型解读
 >
 > Embedding+MLP结构是DNN应用在CTR预估的标准模式。通常，NN层之间都使用“add operation” ，通过激活函数来引入非线性。作者认为，单纯的“add”也许不足以捕获不同的Filed特征间的相关性，一些相关研究表明“product”相比“add”能更好得捕捉特征间的dependence，因此作者希望**在NN中显示地引入“product”操作**，从而更好地学习不同Field特征间的相关性。
 
-img1
+![image](https://github.com/ShaoQiBNU/PNN/blob/master/img/1.jpg)
 
 > 所以本文提出了**PNN**这个模型，在embedding层后设计了Product Layer，以显示捕捉**基于Field的二阶特征相关性。**其中的**embedding层**学习种类特征的分布式表示，**product层**捕获种类特征之间的交互特征（学习filed之间的交互特征），**全连接层**捕获高阶交互特征。
 
@@ -15,21 +15,21 @@ img1
 
 > PNN模型结构如图所示：
 
-img2
+![image](https://github.com/ShaoQiBNU/PNN/blob/master/img/2.jpg)
 
 > 各层结构定义如下：
 
-Img3
+![image](https://github.com/ShaoQiBNU/PNN/blob/master/img/3.jpg)
 
 > PNN与标准的「Embedding+MLP」差异仅在于引入了Product Layer，Product Layer左边Z部分是将Embedding层直接原封不动地搬来，右边P部分才是优化的重点。注意，product layer 中每个节点（见蓝色节点）是**两两Field的embedding对应**的“product”结果，而非所有Field的。product 函数的不同选择，PNN也有不同实现，文中尝试了相对常见的向量内积（inner product）和外积（outer product），对应 IPNN 和OPNN。
 
 ## IPNN
 
-Img4
+![image](https://github.com/ShaoQiBNU/PNN/blob/master/img/4.jpg)
 
 ## OPNN
 
-Img5
+![image](https://github.com/ShaoQiBNU/PNN/blob/master/img/5.jpg)
 
 参考：https://zhuanlan.zhihu.com/p/56651241
 
@@ -52,11 +52,11 @@ Img5
 
 > 不同数据集和指标上的结实验果如下表所示，PNN类模型性能最优
 
-img6
+![image](https://github.com/ShaoQiBNU/PNN/blob/master/img/6.jpg)
 
 > 论文也做了其他补充实验。在iPinYou数据集上，各模型在不同迭代轮数下的Auc曲线如图2所示，可见PNN模型的收敛速度在iPinYou上也优于其他算法。使用不同的隐层depth和不同类型激活函数，实验结果分别如图所示。
 
-img
+![image](https://github.com/ShaoQiBNU/PNN/blob/master/img/7.jpg)
 
 # 结论
 

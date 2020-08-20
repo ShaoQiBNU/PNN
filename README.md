@@ -66,3 +66,8 @@ PNN模型解读
 
 1. PNN的动机很直观，通过在NN的嵌入层和隐层之间引入product层，显示地引入基于field的“product”，从而加强单纯基于“add”的NN的特征相关性学习能力。
 2. PNN对所有特征进行无差别化的交叉，一定程度上忽略了原始特征向量中包含的信息，存在局限性。
+
+# 代码
+
+https://github.com/shenweichen/DeepCTR
+
